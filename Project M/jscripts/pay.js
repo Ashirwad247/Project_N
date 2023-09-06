@@ -29,9 +29,7 @@ pname.innerHTML = localStorage.getItem('currentname')
 let buttons = document.querySelectorAll('.btn')
 buttons.forEach(button=>{
     button.addEventListener('click',()=>{
-        
-        // ss+= button.innerHTML
-        // inPut.value = ss
+       
         inPut.value +=button.innerHTML
         
 
@@ -63,6 +61,15 @@ checker.addEventListener('click',()=>{
     payChecker()
     
 })
+
+
+inPut.addEventListener("keydown", function(e) {
+    
+    if (e.key === "Enter" || e.keyCode === 13) {
+       payChecker()
+    }
+  });
+  
 
 
 let myInterval =0

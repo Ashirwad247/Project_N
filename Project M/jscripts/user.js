@@ -24,11 +24,11 @@ let logOutButton = document.querySelector('.logt')
 let bBuy = document.body.querySelector('.bb-buy')
 let bought = document.body.querySelector('.hnmdiv')
   
-bought.classList.add('hnm')
+
 
 
 let MyOrdersDiv = document.querySelector('.ndiv')
-MyOrdersDiv.classList.add('nhidden')    
+
 let myOrdersConnectedDiv = document.querySelector('.mrs')
 
 
@@ -43,9 +43,7 @@ unameDispaly.addEventListener('click',()=>{
         menu.classList.add('menu')
         gsap.to(menu, {y:5, opacity:1})
          
-       
-        
-       
+ 
         
        
     }   
@@ -73,22 +71,12 @@ logOutButton.addEventListener('click',()=>{
     }, 1000);
 })
 
-
-
-
 let itemShower = document.querySelector('.gitems')
 const cards = document.querySelectorAll('.cards')
 let price=0
 let count =0
 let cartElement = document.body.querySelector('.cart .c')
 let temp=0
-
-
-
-
-
-
-
 
 
 cards.forEach((card, index)=>{
@@ -122,7 +110,7 @@ cards.forEach((card, index)=>{
                 localStorage.setItem('cprice', bprice)
                 
                 open('pay.html')
-
+                buyAdder(card)
               
             })
 
@@ -138,10 +126,19 @@ cards.forEach((card, index)=>{
 })
 
 
+function buyAdder(card){
+    let bcard = document.createElement('div')
+    bcard.innerHTML = card.innerHTML
+    bcard.classList.add('newcard')
+    let jj = ncard.hasChildNodes()
+    if(jj == true){
+        const info = ncard.querySelector('.info')
+        info.remove()
+    }
+    bcard.appendChild(ncard)
 
-
-
-
+    
+}
 
 
 //add to cart Logic
@@ -197,7 +194,7 @@ addtoB.forEach(button=>{
         // console.log(temp)
         cartPrices.innerHTML = count
         if(count>1){
-            no.innerHTML = count+' Items'
+            no.innerHTML = 'Cart'+' '+count+' Items'
         }else{
         no.innerHTML = count+' Item'
 
@@ -216,33 +213,45 @@ addtoB.forEach(button=>{
 
 // Orders Cart 
 bBuy.addEventListener('click', ()=>{
-    bought.classList.add('bought')
-    gsap.to(bought, {opacity:1, y:0, scale:1})
-    bought.classList.remove('hnm')
+   
+        bought.classList.remove('hnm')
+        bought.classList.add('bought')
+        gsap.to(bought, {opacity:1, y:0, scale:1})
+
+  
+   
  
 })
 
 
 closeB.addEventListener('click', ()=>{
-    console.log('clciked')
-
-    gsap.to(bought, {y:-80, ease:Expo, opacity: 0, duration:0.5})
-    setTimeout(() => {
-     bought.classList.remove('bought')
-    
-     bought.classList.add('hnm')
-        
-    }, 500);
+  closeBfun()
     
 })
+
+function closeBfun(){
+    console.log('clciked')
+   
+        gsap.to(bought, {y:-80, ease:Expo, opacity: 0, duration:0.5})
+        setTimeout(() => {
+         bought.classList.remove('bought')
+        
+         bought.classList.add('hnm')
+            
+        }, 500);
+    
+
+   
+}
 
 //My Orders logic
 
 let MyOrdersButton = document.querySelector('.myobtn')
 MyOrdersButton.addEventListener('click',()=>{
+    MyOrdersDiv.classList.remove('nhidden')
     MyOrdersDiv.classList.add('mors')
     gsap.fromTo(MyOrdersDiv, {opacity:0, y:-40},{opacity:1, y:0})
-    MyOrdersDiv.classList.remove('nhidden')
+   
     
 })
 
@@ -251,9 +260,9 @@ MyOrdersCloseButton.addEventListener('click',()=>{
 
     gsap.to(MyOrdersDiv, {y:-80, ease:Expo, opacity: 0, duration:0.5})
     setTimeout(() => {
-     MyOrdersDiv.classList.remove('bought')
+     MyOrdersDiv.classList.remove('mors')
     
-     MyOrdersDiv.classList.add('hnm')
+     MyOrdersDiv.classList.add('nhidden')
         
     }, 500);
 
@@ -277,8 +286,6 @@ function cartAdder(card){
 
 let amount=0
 
-
-
 payB.addEventListener('click',()=>{
     console.log('clicked')
     amount = rup.innerText
@@ -295,56 +302,69 @@ function flagChanger(){
     flag = localStorage.getItem('flagValue')
     if(flag !== null){
         DelAdC()
-        console.log('called cuntion')
+        console.log('called funtion')
     }
    
 }
 
 
-
-//removeChild logic
 flagUpdate()
 let cid, CintId
 function DelAdC(){
     
-    
+   toPopArray.sort()
+   let  revar=toPopArray.reverse()
+    console.log(revar)
     cards.forEach(card=>{
         cid = card.querySelector('.item-id')
+        console.log(cid)
         CintId = Number.parseInt(cid.innerHTML)
-        if(toPopArray.includes(CintId)){
-            
+        if(revar.includes(CintId)){
+                
+            toPopArray.pop(CintId)
+            console.log(toPopArray+"After poping")
             console.log('yes')
+            console.log(CintId)
             newprice = card.querySelector('.lf .price .pricen').innerHTML.slice(1)
             count=0
             CartShowerCount(newprice, count)
-             CartRemover(card)
+            CartRemover(card)
             cartElement.innerHTML = count
             gsap.to(card, {y:-20, opacity:0, duration:1})
+            closeBfun()
+    
             setTimeout(() => {
+            if(CintId == CintId){
+                itemShower.removeChild(card)
 
-            itemShower.removeChild(card)
+            }
             
-           
+            
     
             }, 1000);
             console.log('removed')
             
-            toPopArray.pop(CintId)
-            localStorage.removeItem('flagValue')
+            
+            // console.log(toPopArray)
            
     
         }
        
     })
+    localStorage.removeItem('flagValue')
+
 
     
 }
+
+
 
 
 function flagUpdate(){
     setInterval(() => {
         flagChanger()
         console.log(flag)
+        console.log(toPopArray)
        
     }, 1000);
    
@@ -359,7 +379,7 @@ function CartShowerCount(price, count){
     
     let  temp1=price
     temp1=Number.parseInt(temp1)
-    temp -=temp1
+    temp = 0
     // console.log(temp)
     cartPrices.innerHTML = ''
     if(count>1){
@@ -368,23 +388,28 @@ function CartShowerCount(price, count){
     no.innerHTML = count+' Item'
 
     }
-    rup.innerHTML = '&#8377;'+temp
+    rup.innerHTML = '&#8377;'+'0'
     rup.style.fontSize = '20px'
-    cartSum.innerHTML=temp
+    cartSum.innerHTML='0'
 
 }
 
 let child
+
 function CartRemover(card){
     let children = Addiing.children
+    // myOrdersConnectedDiv.innerHTML = 'hello'
+
     for(let i=0; i<children.length; i++){
         child = children[i];
         
-        // child.remove()
-    
+        child.remove()
         myOrdersConnectedDiv.appendChild(child)
+        console.log(toPopArray)
 
     }
+   
+    
 
  
 }
