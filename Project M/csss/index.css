@@ -1,0 +1,409 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans';
+}
+
+
+body{
+    background-color:#e9e9e9;
+    
+}
+
+
+.navbar{
+    padding: 15px 15px;
+    background-color: #3b424f;
+    position: sticky;
+    
+    box-shadow: 0 0px 10px 1px ;
+   
+}
+
+.navdiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a{
+    font-size: 35px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+    
+}
+
+
+li a{
+    text-decoration: none;
+    color: white;
+    transition: color .35s;
+  
+    
+   
+
+}
+
+li a:hover{
+    color: rgb(219, 219, 219);
+}
+
+
+.rlinks{
+    display: flex;
+
+    gap: 27px;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    
+}
+
+.cdiv{
+    position: relative;
+    cursor: pointer;
+   
+}
+
+.cart-png{
+    filter: invert(100%);
+    color: rgb(0, 0, 0);
+}
+
+.cdiv .cart-d{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.85);
+    width: 250px;
+   
+
+    padding: 16px;
+    top: 60px;
+    right: -150px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    opacity: 0;
+    color: white;
+    transition: all 0.23s;
+    
+}
+
+.cdiv:hover .cart-d{
+    opacity: 1  ;
+}
+
+
+
+
+
+
+.sign{
+    padding: 12px 10px;
+    background-color: rgb(141, 146, 181);
+    border :2px solid #3c415b;
+    border-radius: 12px;
+    font-size: 20px;
+    font-family:'Segoe UI';
+    transition: all 0.25s;
+    font-weight: bold;
+  
+
+    
+
+}
+
+.sign:hover{
+   
+    border:2px solid rgb(141, 146, 181);
+    color: white;
+    font-weight: bold;
+    background-color: black;
+
+    transform: translateY(5px) scale(1.2);
+    
+    
+}
+
+.ssign{
+    background-color: red;
+   
+}
+
+
+
+
+
+
+
+.log{
+
+    padding: 12px 12px;
+    background-color: white;
+    border :2px solid transparent;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all 0.25s;
+    position: relative;
+    z-index: 0;
+
+   
+
+}
+
+.log:hover{
+    transform: scale(1.1);
+    border: 2px solid black;
+    box-shadow: 3px 3px 300px 1px;
+}
+
+.llog{
+    pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+
+.items{
+    background-color: #d3f6d6;
+    padding: 12px 18px 12px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    gap: 24px;
+  
+}
+
+
+
+
+.info{
+    display: flex;
+    flex-direction: column;
+}
+
+.para{
+    padding: 16px;
+}
+
+.hidden{
+    display: none;
+}
+
+.btns{
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+}
+
+.add-c{
+    padding: 12px 18px;
+    background:linear-gradient(rgb(102, 227, 102), white);
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.25s;
+}
+
+.add-c:hover{
+    background: white;
+    border: 2px solid green;
+    color: green;
+}
+
+
+
+.buy-i{
+    padding: 12px 28px;
+    background:linear-gradient(rgb(223, 238, 89), white);
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    transition: all 0.25s;
+}
+
+.buy-i:hover{
+    background:linear-gradient(to left, white 20%, rgb(223, 238, 89) 80%);
+    border: 2px solid black;
+}
+
+
+
+
+.gitems{
+   display: grid;
+   
+    grid-template-columns: repeat(4, 1fr);
+   gap: 70px;
+    padding: 20px 30px;
+   justify-content: center;
+   align-items: center;
+   
+}
+
+
+
+
+
+.cards{
+    padding: 16px;
+    
+    background-color: #bfbfbfae;
+
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.15s;
+
+    cursor: pointer;
+    gap: 4px;
+    margin: 2rem auto;
+   
+}
+
+.cards:hover{
+    transform: translateY(-20px);
+}
+
+
+.lf{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+   .cards .info{
+    line-height: 2rem;
+    display: none;
+   }
+
+   .cards.active .info{
+    display: block;
+   }
+
+   .cards.active{
+    grid-column: 1/span 4;
+    grid-row:1;
+    order:0;
+    
+   }
+
+   
+   .cards.active:hover{
+    transform: none;
+    
+   }
+
+   
+
+   .cards.is-inactive{
+    grid-column: span 1;
+   }
+
+
+
+
+
+
+
+
+.i-img{
+    width: 260px;
+    height: 192px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.desc{
+    margin-top: 2px;
+}
+
+
+
+
+.foot{
+    background-color: #3b424f;
+    padding: 20px 20px;
+    color: #ffffff;
+     text-align: center;
+    font-size: 17px;
+     bottom: 0;
+    left: 0;
+   
+    
+    
+   
+}
+
+body{
+    position: relative;
+}
+
+
+.dummy{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+
+   
+}
+
+
+
+.popup{
+
+    background-color: white;
+    font-size: 30px;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 0  80px 70px rgba(0, 0, 0, 0.25);
+    
+    
+}
+
+.x-btn{
+    align-self: flex-start;
+    
+    background-color: red;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    border-top-left-radius: 15px;
+}
+
+.x-btn:hover{
+    background-color: rgb(188, 0, 0);
+}
+
+.inner{
+    padding: 100px 200px;
+}

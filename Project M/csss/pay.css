@@ -1,0 +1,256 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans';
+}
+
+
+
+
+body{
+    background:linear-gradient(white, rgb(164, 200, 254));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+}
+
+
+.one{
+    display: flex;
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    opacity: 0;
+  
+}
+
+.span1{
+    height: 5px;
+    width: 100px;
+    background-color: black;
+    position: absolute;
+}
+
+
+.span2{
+    height: 5px;
+    width: 100px;
+    background-color: black;
+    position: absolute;
+    bottom: 25px;
+    left: 50px;
+}
+
+.span3{
+    height: 5px;
+    width: 100px;
+    background-color: black;
+    position: absolute;
+    top: 155px;
+    left: 300px;
+
+}
+
+.span4{
+    height: 5px;
+    width: 100px;
+    background-color: black;
+    position: absolute;
+    bottom: 150px;
+    left: 500px;
+
+}
+.span5{
+    height: 5px;
+    width: 100px;
+    background-color: black;
+    position: absolute;
+    top: 20px;
+    left: 700px;
+
+}
+
+
+.truck{
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+}
+
+.ar{
+    font-size: 40px;
+    top: -30px;
+    margin-bottom: 20px;
+}
+
+.hs{
+    position: absolute;
+    left: -30px;
+    bottom: 0;
+    opacity: 0;
+}
+
+.ground{
+    display: flex;
+    width: 100%;
+    background-color: black;
+    height: 300px;
+    position: absolute;
+    height: 45px;
+    bottom: -40px;
+    
+}
+
+.c-btn{
+    position: absolute;
+    bottom:-110px;
+    background:linear-gradient(white,  rgb(164, 200, 254));
+    padding: 15px 15px;
+    border-radius: 15px;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: all 1.5s;
+}
+
+.c-btn:hover{
+    background:linear-gradient(to right,  white,  rgb(45, 98, 178));
+
+}
+
+
+
+
+
+
+img{
+    object-fit:cover;
+    height: 400px;
+
+  
+}
+
+
+
+.info{
+    color: red;
+    font-size: 20px;
+
+}
+
+
+
+
+.amount{
+    display: flex;
+    box-shadow: 0 0 30px 4px rgba(0, 0, 0, 0.25);
+    align-items: center;
+    height: 600px;
+    width: 500px;
+   
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+
+}
+
+
+.p{
+    display: flex;
+    padding: 25px 25px;
+    
+    font-size: 20px;
+    flex-direction: column;
+    width: 70%;
+    align-items:flex-start;
+    font-family: 'Lucida Sans';
+    justify-content: center;
+}
+
+
+.sub{
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputs{
+    padding: 5px 15px;
+    width: 100%;
+    height: 50px;
+    width: 300px;
+    font-size: 20px;
+
+}
+
+.checker{
+    background-color: rgb(129, 224, 233);
+    cursor: pointer;
+    padding: 25px;
+    color: black;
+    transition: all 0.25s;
+}
+
+.checker:hover{
+    color: white;
+    background-color: rgb(23, 145, 157);
+}
+
+
+.btns{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 400px;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn{
+    padding: 5px 5px;
+    border: 1px solid rgb(192, 192, 223);
+    height: 50px;
+    width: 50px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: rgb(164, 200, 254);
+    cursor: pointer;
+    transition: all 0.25s;
+    font-size: 20px;
+}
+
+.btn:hover{
+    border: 1px solid black;
+    color: black;
+}
+
+.btnc{
+    padding: 5px 5px;
+    border: 1px solid rgb(192, 192, 223);
+    height: 50px;
+   
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: rgb(164, 200, 254);
+    cursor: pointer;
+    transition: all 0.25s;
+    font-size: 20px;
+    display: flex;
+    width: 150%;
+    
+}
+
+.btnc:hover{
+    border: 1px solid black;
+    color: black;
+
+}
