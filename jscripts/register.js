@@ -50,7 +50,7 @@ function register(){
         log.innerHTML = 'Registerd Succesfully'
         myvals = localStorage.getItem(userName)
         setTimeout(() => {
-            window.location.href = '/login.html'
+            window.location.href ='./login.html'
         }, 1000);
         
     }else{

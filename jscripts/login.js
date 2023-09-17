@@ -17,6 +17,7 @@ function onloadd(){
 
     
 }
+console.log(window.location.pathname)
 
 
 document.addEventListener("keypress", function(e){
