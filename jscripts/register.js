@@ -19,6 +19,16 @@ function onloadd(){
 }
 
 
+
+
+
+document.addEventListener("keypress", function(e){
+    if(e.key=="Enter" || e.keyCode == 13){
+        console.log('Entered')
+        register()
+    }
+})
+
 function register(){
     let userName = document.querySelector('.us').value
     let password = document.querySelector('.ps').value
@@ -39,18 +49,15 @@ function register(){
         localStorage.setItem(userName, JSON.stringify(user));
         log.innerHTML = 'Registerd Succesfully'
         myvals = localStorage.getItem(userName)
+        setTimeout(() => {
+            window.location.href = '/login.html'
+        }, 1000);
         
     }else{
         log.innerHTML = 'password does not match'
     }
 }
 
-
-// function chekPass(password){
-//    if(password.length >=8){
-//     log.innerHTML ='password should only contain 8 characters'
-//    }
-// }
 
 
 

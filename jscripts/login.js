@@ -19,6 +19,15 @@ function onloadd(){
 }
 
 
+document.addEventListener("keypress", function(e){
+    if(e.key=="Enter" || e.keyCode == 13){
+        console.log('Entered')
+        login()
+    }
+})
+
+console.log('changed all')
+
 function login(){
     let luserName = document.querySelector('.us').value
     let lpassword = document.querySelector('.ps').value
@@ -38,7 +47,10 @@ function login(){
     let checkedUser = luserName
     localStorage.setItem("currentname",checkedUser)
     
-    window.location.href = "/htmls/user.html"
+    setTimeout(() => {
+        window.location.href = "/user.html"
+    }, 2000);
+  
     
 
    
