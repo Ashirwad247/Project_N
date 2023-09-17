@@ -103,14 +103,12 @@ cards.forEach((card, index)=>{
 
             let buyButton = card.querySelector('.info .btns .buy-i')
             buyButton.addEventListener('click', ()=>{
-                // console.log('clicked')
 
                 
-                
                 localStorage.setItem('cprice', bprice)
-                
-                open('pay.html')
                 buyAdder(card)
+                open('pay.html')
+       
               
             })
 
@@ -125,20 +123,6 @@ cards.forEach((card, index)=>{
 
 })
 
-
-function buyAdder(card){
-    let bcard = document.createElement('div')
-    bcard.innerHTML = card.innerHTML
-    bcard.classList.add('newcard')
-    let jj = ncard.hasChildNodes()
-    if(jj == true){
-        const info = ncard.querySelector('.info')
-        info.remove()
-    }
-    bcard.appendChild(ncard)
-
-    
-}
 
 
 //add to cart Logic
@@ -269,6 +253,33 @@ MyOrdersCloseButton.addEventListener('click',()=>{
 })
 
 
+//buy one item function
+function buyAdder(card){
+    console.log('called the stupid function')
+    let bcard = document.createElement('div')
+    let bid= card.querySelector('.item-id')
+    toPopArray.push(bid)
+    IntId=Number.parseInt(bid.innerHTML)
+   
+
+    bcard.innerHTML = card.innerHTML
+
+    bcard.classList.add('newcard')
+    let jj = bcard.hasChildNodes()
+    if(jj == true){
+        const info = bcard.querySelector('.info')
+        info.remove()
+    }
+    itemShower.removeChild(card)
+    myOrdersConnectedDiv.appendChild(bcard)
+    
+    
+
+    
+
+    
+}
+
 
 
 function cartAdder(card){
@@ -301,7 +312,9 @@ localStorage.removeItem('flagValue')
 function flagChanger(){
     flag = localStorage.getItem('flagValue')
     if(flag !== null){
+        
         DelAdC()
+        
         console.log('called funtion')
     }
    
