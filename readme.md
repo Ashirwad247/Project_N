@@ -7,7 +7,6 @@ follow these two ways
 3.Add live-server extension in the vs code
 4.now go to index.html and click on Go live
 5.Done
-----------------------------------------------------------------
 Or
 Install npm package manager
 1.after installing in the command prompt or terminal type npm install live-server -g
