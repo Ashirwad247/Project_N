@@ -66,7 +66,7 @@ unameDispaly.addEventListener('click',()=>{
 logOutButton.addEventListener('click',()=>{
     gsap.to('body', {opacity:0})
     setTimeout(() => {
-    window.location.href = "/htmls/index.html"
+    window.location.href = "./index.html"
         
     }, 1000);
 })
@@ -107,7 +107,7 @@ cards.forEach((card, index)=>{
                 
                 localStorage.setItem('cprice', bprice)
                 buyAdder(card)
-                open('pay.html')
+                open('Pay.html')
        
               
             })
@@ -303,7 +303,7 @@ payB.addEventListener('click',()=>{
     console.log(amount)
     localStorage.setItem('cprice', amount)
 
-    open('pay.html')
+    open('Pay.html')
     
 })
 
