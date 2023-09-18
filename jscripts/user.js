@@ -67,7 +67,7 @@ logOutButton.addEventListener('click',()=>{
     gsap.to('body', {opacity:0})
     setTimeout(() => {
     window.location.href = "./"
-  
+    
         
     }, 1000);
 })

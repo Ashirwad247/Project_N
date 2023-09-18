@@ -39,7 +39,7 @@ LogButton.addEventListener('click', ()=>{
 
     gsap.to(LogButton,0.2,{ 'borderRadius':50,  backgroundColor: 'rgb(255, 255, 255)', color:'  rgb(93, 252, 112)', scale:100.5,backgroundColor:'rgb(93, 252, 112)', opacity:0.7,ease:Power3.easeOut  })
     setTimeout(() => {
-                window.location.href ="/login.html";
+                window.location.href ="./login.html";
                 
                 
             }, 500);
