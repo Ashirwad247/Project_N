@@ -640,6 +640,25 @@ footer{
     grid-template-columns: repeat(3, 1fr);
     /* gap: 20px; */
     }
+
+    
+    .cards.active{
+        grid-column: 1/span 3;
+        grid-row:1;
+        order:0;
+        
+       }
+
+
+       .cards.is-inactive{
+        grid-column: span 1;
+       }
+    
+
+    
+  
+
+    
     
 }
 
@@ -671,6 +690,18 @@ footer{
         grid-template-columns: repeat(2, 1fr);
         gap: 0;
         }
+
+    .cards.active{
+            grid-column: 1/span 2;
+            grid-row:1;
+            order:0;
+            
+    }
+    
+    
+    .cards.is-inactive{
+            grid-column: span 1;
+    }
 
     
 }
@@ -732,13 +763,28 @@ footer{
     }    
 
     .gitems{
-        display: flex;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0;
+    }
+
+  
+    .cards{
+        font-size: 10px;
         flex-direction: column;
     }
 
-    .cards{
-        font-size: 10px;
-    }
+
+    .cards.active{
+        grid-column: 1/span 1;
+        grid-row:0;
+        order:0;
+        
+       }
+
+
+       .cards.is-inactive{
+        grid-column: span 1;
+       }
 }
 
 
