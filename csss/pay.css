@@ -258,10 +258,33 @@ img{
 
 
 @media (max-width:768px) {
+
     body{
-        height: 80vh;
+        position: relative;
+    }    
+    .amount{
+        position: absolute;
+       left: 24%;
         font-size: 14px;
         
+    }
+
+    .truck{
+        width: 100vw;
+    }
+
+    .hs{
+        height: 200px;
+        
+    }
+
+    .timg{
+        width: 50%;
+        height: 50%;
+    }
+
+    .ground{
+        width: 150vw;
     }
     
 }
@@ -270,10 +293,36 @@ img{
 
 @media (max-width: 640px) {
     body{
+        position: relative;
+       
+    }    
+    .amount{
+        position: absolute;
+       left: 35%;
+        font-size: 14px;
+        
+    }
+
+    .truck{
+        width: 27vw;
+        align-self: center;
+        position: absolute;
+        left: 70%;
+        
+    }
+
+    .hs{
         height: 100%;
-        align-items: center;
-        justify-content: center;
-        font-size: 10px;
+    
+    }
+
+    .timg{
+        width: 100%;
+        height: 100%;
+    }
+
+    .ground{
+        width: 2700vw;
     }
     
 }

@@ -102,4 +102,68 @@ input{
 }
 
 
+@media (max-width:1024px) {
+
+   
+
+    .lform{
+        width: 300px;
+        font-size: 18px;
+        
+       
+    }
+
+    input{
+        width: 240px;
+    }
+
+    .sbutton{
+        width: 100px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+
+
+    .log{
+        min-width: 300px;
+        font-size: 19px;
+    }
+    
+}
+
+@media (max-width:768px) {
+
+    
+    .lform{
+        width: 250px;
+        font-size: 14px;
+        height: 40%;
+        
+       
+    }
+
+    input{
+        width: 70%;
+    }
+
+    .sbutton{
+        width: 100px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+
+
+    .log{
+        min-width: 260px;
+        font-size: 16px;
+        /* padding: 10px; */
+    }
+    
+}
+
+
+
+
 
