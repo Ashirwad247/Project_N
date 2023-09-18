@@ -796,6 +796,48 @@ footer{
         gap: 4%;
     }
 
+
+    
+    .bought{
+        position: absolute;
+        left: -10px;
+        right: 0;
+        padding: 10%;
+        overflow: hidden;
+        margin: 12%;
+        
+      
+    }
+
+    .ing{
+        border: 5px solid black;
+  
+        flex-wrap: wrap;
+        border-radius: 25px;
+        display: flex;
+        
+        
+        cursor:auto;
+        gap: 25px;
+    
+       justify-content: center;
+       align-items: center;
+    
+    
+    }
+
+    .mors{
+        left: 0%;
+    }
+
+
+    .mrs{
+        gap: 1;
+        overflow: hidden;
+    }
+
+
+
     .gitems{
         grid-template-columns: repeat(1, 1fr);
         gap: 0;
@@ -805,6 +847,7 @@ footer{
     .cards{
         font-size: 10px;
         flex-direction: column;
+      
     }
 
 
