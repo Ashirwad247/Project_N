@@ -723,6 +723,26 @@ footer{
         font-size: 20px;
     }
 
+    body{
+        position: relative;
+    }
+
+
+    .bought{
+        position: absolute;
+        left: -10px;
+        right: 0;
+        padding: 10%;
+        
+      
+    }
+
+    .mors{
+        position: absolute;
+        left: 10%;
+        top: 10%;
+    }
+
 
     .gitems{
          
@@ -735,6 +755,7 @@ footer{
         font-size: 14px;
     }
 
+   
 
     
 }
@@ -760,7 +781,20 @@ footer{
 
     .rlinks {
         flex-direction: column;
-    }    
+    }  
+    
+    .cdiv .cart-d{
+        top:50px;
+        right: 0;
+        padding: 1em 6rem 1em ;
+        flex-direction: column;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+        left: -400%;
+        gap: 4%;
+    }
 
     .gitems{
         grid-template-columns: repeat(1, 1fr);
