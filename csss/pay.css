@@ -151,8 +151,8 @@ img{
     display: flex;
     box-shadow: 0 0 30px 4px rgba(0, 0, 0, 0.25);
     align-items: center;
-    height: 600px;
-    width: 500px;
+    height: 85%;
+    width: 35%;
     cursor: pointer;
     align-items: center;
     justify-content: center;
@@ -294,17 +294,41 @@ img{
 @media (max-width: 640px) {
     body{
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
        
     }    
     .amount{
         position: absolute;
-       left: 35%;
+  
         font-size: 14px;
+        width: 100vw;
+        height: 97%;
+        flex-wrap: wrap;
+        padding: 10%;
+
+        
+    }
+
+    .inputs{
+        margin: 0;
+        
+    }
+
+    .checker{
+        padding: 5%;
+        right: 0;
+        position: absolute;
+        display: flex;
+        margin: 0;
+        border-radius: 50%;
         
     }
 
     .truck{
         width: 27vw;
+        /* height: 60%; */
         align-self: center;
         position: absolute;
         left: 70%;
@@ -312,7 +336,7 @@ img{
     }
 
     .hs{
-        height: 100%;
+        height: 50%;
     
     }
 
