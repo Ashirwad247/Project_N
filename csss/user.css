@@ -764,7 +764,8 @@ footer{
 
     .logo a{  
         /* color: black; */
-        font-size: 14px;
+        font-size: 22px;
+        margin-bottom:25px ;
        
     } 
 
@@ -781,10 +782,12 @@ footer{
 
     .rlinks {
         flex-direction: column;
+        gap: 60px;
+        
     }  
     
     .cdiv .cart-d{
-        top:50px;
+        top:20px;
         right: 0;
         padding: 1em 6rem 1em ;
         flex-direction: column;
@@ -794,6 +797,13 @@ footer{
         overflow: hidden;
         left: -400%;
         gap: 4%;
+    }
+
+    .avv{
+        z-index: 3;
+     
+        font-size: 16px;
+
     }
 
 
