@@ -51,9 +51,33 @@ LogButton.addEventListener('click', ()=>{
    
 })
 
+let itemShower = document.querySelector('.gitems')
+let searchButton = document.querySelector('.search-btn')
+let iShowStyle = itemShower.innerHTML
+searchButton.addEventListener('click', ()=>{
+    console.log('called')
+    itemShower.innerHTML=iShowStyle
+    let searcBar = document.querySelector('.searchbar').value.toLowerCase()
+    console.log(searcBar)
+    cards.forEach((card)=>{
+        let Ishower=itemShower.innerHTML
+        let itemName =card.querySelector('.lf .i-name').innerHTML.toLowerCase()
+        console.log(itemName)
+        if(itemName == searcBar)
+        {itemShower.innerHTML=''
+          itemShower.appendChild(card)
+        }
+    
+     
+    })
+   
 
 
 
+})
+
+
+  
 
 
 

@@ -72,6 +72,38 @@ li{
 }
 
 
+.search-div{
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    width: 150%;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.searchbar{
+    display: flex;
+    width: 100%;
+    padding: 1em ;
+    font-size: 15px;
+    box-shadow: 0px 0px 3px 0px inset;
+}
+
+.searchbar::placeholder{
+    font-size: 15px;
+}
+
+    
+
+
+.s-icon{
+    object-fit:cover;
+    height: 95%;
+    width: 95%;
+  
+}
+
 
 
 .rlinks{
@@ -779,6 +811,7 @@ footer{
         /* color: red; */
     }
 
+    
 
     .rlinks {
         flex-direction: column;
