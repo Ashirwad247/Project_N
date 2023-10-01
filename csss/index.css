@@ -101,17 +101,17 @@ li a:hover{
 }
 
 
-
-/* .search-btn{
-   
+/* 
+.search-btn{
+   height: 95%;
 } */
 
 
 
 .s-icon{
     object-fit:cover;
-    height: 95%;
-    width: 95%;
+    height: 94%;
+    width: 94%;
   
 }
 
@@ -232,8 +232,44 @@ li a:hover{
 
 
 
+.navbar{
+    position: relative;
+}
 
+.nhid{
+    display: none;
+}
 
+.nshow{
+    display: flex;
+    position: absolute;
+    top: 6%;
+    left: 40%;
+    padding:1.5rem 1.5rem;
+    font-size: 15px;
+    z-index: 2;
+    font-weight: bold;
+    background-color: red;
+    animation-name: hibye;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes hibye {
+    0%{
+        top:0;
+        opacity: 0;
+    }50%{
+        top:6%;
+        opacity: 1;
+    }
+    100%{
+        top: 10%;
+        opacity: 0;
+    }
+}
 
 
 
@@ -476,7 +512,42 @@ body{
 @media (max-width:1231px) {
 
   
- 
+    .search-div{
+        /* background-color: red; */
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        width: 100%;
+        border-radius: 24px;
+        overflow: hidden;
+    }
+    
+    .searchbar{
+        display: flex;
+        width: 80%;
+        padding: 1em ;
+        font-size: 15px;
+        box-shadow: 0px 0px 3px 0px inset;
+    }
+    
+    .searchbar::placeholder{
+        font-size: 15px;
+    }
+    
+    
+    /* 
+    .search-btn{
+       height: 95%;
+    } */
+    
+    
+    
+    .s-icon{
+        object-fit:cover;
+        height: 94%;
+        width: 94%;
+      
+    }
 
   
 
@@ -522,6 +593,9 @@ body{
        font-size: 22px;
 
     }
+
+
+
 
     .sign,.log{
         font-size: 22px;

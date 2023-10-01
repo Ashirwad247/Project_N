@@ -99,8 +99,8 @@ li{
 
 .s-icon{
     object-fit:cover;
-    height: 95%;
-    width: 95%;
+    height: 94%;
+    width: 94%;
   
 }
 
@@ -243,6 +243,48 @@ li a:hover{
 .menu li:hover{
     color: white;
 }
+
+
+.navbar{
+    position: relative;
+}
+
+.nhid{
+    display: none;
+}
+
+.nshow{
+    display: flex;
+    position: absolute;
+    top: 6%;
+    left: 40%;
+    padding:1.5rem 1.5rem;
+    font-size: 15px;
+    z-index: 2;
+    font-weight: bold;
+    background-color: red;
+    animation-name: hibye;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes hibye {
+    0%{
+        top:0;
+        opacity: 0;
+    }50%{
+        top:6%;
+        opacity: 1;
+    }
+    100%{
+        top: 10%;
+        opacity: 0;
+    }
+}
+
+
 
 .items{
     background-color: #d3f6d6;
@@ -664,7 +706,13 @@ footer{
 
    
  
+    .search-div{
+        width: 100%;
+    }
 
+    .searchbar{
+        width: 80%;
+    }
   
 
     .gitems{

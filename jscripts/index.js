@@ -53,8 +53,26 @@ LogButton.addEventListener('click', ()=>{
 
 let itemShower = document.querySelector('.gitems')
 let searchButton = document.querySelector('.search-btn')
+let nfDiv =document.querySelector('.nfd')
 let iShowStyle = itemShower.innerHTML
 searchButton.addEventListener('click', ()=>{
+    Searcher()
+
+
+
+})
+
+document.addEventListener('click',()=>{
+    document.addEventListener("keypress", function(e){
+        if(e.key=="Enter" || e.keyCode == 13){
+            Searcher()
+        }
+    })
+})
+
+
+function Searcher(){
+    let ndflag=false
     console.log('called')
     itemShower.innerHTML=iShowStyle
     let searcBar = document.querySelector('.searchbar').value.toLowerCase()
@@ -64,17 +82,23 @@ searchButton.addEventListener('click', ()=>{
         let itemName =card.querySelector('.lf .i-name').innerHTML.toLowerCase()
         console.log(itemName)
         if(itemName == searcBar)
-        {itemShower.innerHTML=''
+        {   
+          ndflag =true
+          itemShower.innerHTML=''
           itemShower.appendChild(card)
         }
     
      
     })
+    if(ndflag!=true){
+        nfDiv.classList.add('nshow')
+        setTimeout(() => {
+            nfDiv.classList.remove('nshow')
+        }, 3000);
+    }
+
    
-
-
-
-})
+}
 
 
   

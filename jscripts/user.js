@@ -84,7 +84,22 @@ let temp=0
 
 let searchButton = document.querySelector('.search-btn')
 let iShowStyle = itemShower.innerHTML
+let nfDiv =document.querySelector('.nfd')
 searchButton.addEventListener('click', ()=>{
+    Searcher()
+
+})
+
+document.addEventListener('click',()=>{
+    document.addEventListener("keypress", function(e){
+        if(e.key=="Enter" || e.keyCode == 13){
+            Searcher()
+        }
+    })
+})
+
+function Searcher(){
+    let ndflag=false
     console.log('called')
     itemShower.innerHTML=iShowStyle
     let searcBar = document.querySelector('.searchbar').value.toLowerCase()
@@ -94,13 +109,25 @@ searchButton.addEventListener('click', ()=>{
         let itemName =card.querySelector('.lf .i-name').innerHTML.toLowerCase()
         console.log(itemName)
         if(itemName == searcBar)
-        {itemShower.innerHTML=''
+        {   
+          ndflag =true
+          itemShower.innerHTML=''
           itemShower.appendChild(card)
         }
-
+    
+     
     })
+    if(ndflag!=true){
+        nfDiv.classList.add('nshow')
+        setTimeout(() => {
+            nfDiv.classList.remove('nshow')
+        }, 3000);
+    }
 
-})
+   
+}
+
+
 
 
 cards.forEach((card, index)=>{
