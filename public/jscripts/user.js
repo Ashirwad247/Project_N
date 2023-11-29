@@ -107,7 +107,7 @@ function Searcher(){
     cards.forEach((card)=>{
         let Ishower=itemShower.innerHTML
         let itemName =card.querySelector('.lf .i-name').innerHTML.toLowerCase()
-        console.log(itemName)
+        // console.log(itemName)
         if(itemName == searcBar)
         {   
           ndflag =true
@@ -149,6 +149,7 @@ cards.forEach((card, index)=>{
 
             //buy Logic
              price = card.querySelector('.lf .price .pricen').innerHTML.slice(1)
+             console.log(price)
              let   bprice = '&#8377;'+ price
           
 
@@ -199,8 +200,9 @@ addtoB.forEach(button=>{
             if(card.contains(button)){
                 // console.log('yes')
                 price = card.querySelector('.lf .price .pricen').innerHTML.slice(1)
+                console.log(typeof price)
                 id = card.querySelector('.item-id')
-                console.log(id.innerHTML)
+                // console.log(id.innerHTML)
                 IntId = Number.parseInt(id.innerHTML)
                 console.log(typeof(IntId))
                 toPopArray.push(IntId)
@@ -265,7 +267,7 @@ closeB.addEventListener('click', ()=>{
 })
 
 function closeBfun(){
-    console.log('clciked')
+    // console.log('clciked')
    
         gsap.to(bought, {y:-80, ease:Expo, opacity: 0, duration:0.5})
         setTimeout(() => {
@@ -378,17 +380,17 @@ function DelAdC(){
     
    toPopArray.sort()
    let  revar=toPopArray.reverse()
-    console.log(revar)
+    // console.log(revar)
     cards.forEach(card=>{
         cid = card.querySelector('.item-id')
-        console.log(cid)
+        // console.log(cid) 
         CintId = Number.parseInt(cid.innerHTML)
         if(revar.includes(CintId)){
                 
             toPopArray.pop(CintId)
-            console.log(toPopArray+"After poping")
-            console.log('yes')
-            console.log(CintId)
+            // console.log(toPopArray+"After poping")
+            // console.log('yes')
+            // // console.log(CintId)
             newprice = card.querySelector('.lf .price .pricen').innerHTML.slice(1)
             count=0
             CartShowerCount(newprice, count)
@@ -406,7 +408,7 @@ function DelAdC(){
             
     
             }, 1000);
-            console.log('removed')
+            // console.log('removed')
             
             
             // console.log(toPopArray)
@@ -427,8 +429,8 @@ function DelAdC(){
 function flagUpdate(){
     setInterval(() => {
         flagChanger()
-        console.log(flag)
-        console.log(toPopArray)
+        // console.log(flag)
+        // console.log(toPopArray)
        
     }, 1000);
    
@@ -469,7 +471,7 @@ function CartRemover(card){
         
         child.remove()
         myOrdersConnectedDiv.appendChild(child)
-        console.log(toPopArray)
+        // console.log(toPopArray)
 
     }
    

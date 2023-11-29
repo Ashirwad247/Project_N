@@ -49,7 +49,7 @@ function login(){
     localStorage.setItem("currentname",checkedUser)
     
     setTimeout(() => {
-        window.location.href = "./user.html"
+        window.location.href = "./user"
     }, 2000);
   
     

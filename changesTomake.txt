@@ -1,0 +1,13 @@
+add database for using buying products and also for user authentication data
+
+add some more animations and improve some
+
+fix the hrefs
+
+fix the open(pay.html)
+
+fix the array filtering in the app buying function
+
+add bought products feature from the user
+
+add Dark mode if possible

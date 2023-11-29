@@ -4,20 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="csss/index.css">
+    <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" href="csss/user.css">
     <link rel="icon" href="icons/pageicon.png">
 </head>
 
 <body>
 
-    <div class="dummy">
-        <div class="popup">
-            <div class="x-btn">X</div>
-            <div class="inner"> Signup/Login First!</div>
-
+    <div class="hnmdiv hnm">
+        <div class="h-f">
+            <div class="h-1"></div>
+            <h1 class="h-2"></h1>
+            <div class="x-button">X</div>
         </div>
+        <div class="ing"></div>
+        <div><button class="buy-bought">Pay Amount</button></div>
     </div>
+
+
+    <div class="ndiv nhidden">
+        <div class="heading">
+            <div class="n-1">
+                <h1>My Orders</h1>
+            </div>
+            <div class="mx-button">X</div>
+        </div>
+        <div class="mrs"></div>
+
+    </div>
+
 
     <div class="nfd nhid">
         <div>Not Found!</div>
@@ -27,23 +42,50 @@
     <nav class="navbar">
         <div class="navdiv">
             <div class="logo"><a href="/">Amzon</a></div>
+
             <div>
                 <div class="search-div">
                     <input type="text" placeholder="Search" class="searchbar">
                     <button class="search-btn"><img src="icons/search.png" class="s-icon" alt=""></button>
                 </div>
             </div>
+
             <ul class="rlinks">
                 <div class="cdiv">
-                    <div class="cart"><img class="cart-png" src="icons/cart.png" alt=""></div>
-                    <div class="cart-d">Cart</div>
+                    <div class="cart"><img class="cart-png" src="icons/cart.png" alt="">
+                        <div class="c"></div>
+                        <div class="cart-d">
+                            <div>Cart</div>
+                            Items:<div class="cd1">0</div>
+                            Total sum:<div class="cd2">0</div>
+                            <div class="bbb"> <button class="bb-buy">Buy</button></div>
+
+                        </div>
+                    </div>
+
 
                 </div>
 
 
-                <li><a href="about">About</a></li>
-                <li><button class="sign ">Sign Up</button></li>
-                <li><button class="log">Log In</button></li>
+                <li><a href="about" class="avv">About</a></li>
+                <li>
+                    <div>
+
+                    </div>
+
+                    <div class="usb "> </div>
+                    <ul class="dupmenu">
+                        <li class="myobtn">My Orders</li>
+                        <li class="logt">Logout</li>
+                    </ul>
+
+
+                </li>
+
+
+
+
+
             </ul>
 
         </div>
@@ -61,12 +103,14 @@
             <div class="cards">
                 <% const productWithId=data.products.find(product=> product.id === i); %>
                     <% if (productWithId) { %>
+                        <div class="item-id"><%= productWithId.id %> </div>
                         <div class="lf">
+
                             <img class="i-img" src="<%= productWithId.thumbnail %>" alt="" loading="lazy">
                             <div class="i-name">
                                 <%= productWithId.title %>
                             </div>
-                            <div class="price">price:<div class="pricen">&#8377; <%= (productWithId.price)+'00' %>
+                            <div class="price">price:<div class="pricen">&#8377;<%=(productWithId.price)+'00' %>
                                 </div>
                             </div>
                         </div>
@@ -83,13 +127,33 @@
             </div>
             <% } %>
 
+
     </div>
 
 
-    <footer class="foot">&#169;2022-2023 Amzon</footer>
 
 
-    <script type="module" src="jscripts/index.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>&#169; 2022-2023 Amzon</footer>
+
+
+    <script type="module" src="jscripts/user.js"></script>
 
 </body>
 
