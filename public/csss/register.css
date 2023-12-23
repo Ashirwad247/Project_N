@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Lucida Sans';
+    font-family: 'QuickSand','Lucida Sans';
 }
 
 
@@ -17,13 +20,15 @@ body{
     background: radial-gradient(rgb(166, 165, 165), rgb(155, 181, 155));
 }
 
-.form{
-    width: 500px;
+.lform{
+    width: 80%;
+    max-width: 500px;
     background-color: rgba(148, 211, 148, 0.55);
+    /* height: auto; */
     height: 500px;
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    /* flex-direction: column; */
+    /* gap: 20px; */
     align-items: center;
     justify-content: center;
     border-radius: 10px;
@@ -33,6 +38,15 @@ body{
    
    
     
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:20px;
 }
 
 .hidden{

@@ -9,15 +9,16 @@
 </head>
 <body onload="onloadd()">
 
-    <div class="form hidden">
-        <div class="heading">Sign up</div>
-        Username
-        <input type="text" class="us"/>
-        Password
-        <input type="password" class="ps"/>
-        Type password again
-        <input type="password" class="ps1"/>
-        <input type="button"  class="sbutton" value="Submit"  onclick="register()">
+    <div class="lform hidden">
+        <form action="/register">
+            <div class="heading"><h1>Sign up</h1></div>
+        <label for="">User Name</label>
+        <input type="text"  name="name"  required class="us"/>
+        <label for="">Password</label>
+        <input type="password"  name="password"  class="ps"/>
+        <input type="submit"  class="sbutton" value="submit"/>
+        </form>
+        
     </div>
 
     <div class="log">

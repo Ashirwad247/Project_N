@@ -1,0 +1,43 @@
+const err = {
+    message: 'Error message', // String: Describes the error
+    name: 'ValidationError', // String: Error type
+    errors: {
+        email: {
+            message: 'Email is not valid', // Error message for invalid email format
+            name: 'ValidatorError', // Error type for invalid email format
+            properties: {
+                message: 'Email is not valid',
+                type: 'validation',
+                path: 'email',
+                value: 'Invalid email address'
+                // Other properties may vary based on the error
+            }
+        },
+        name: {
+            message: 'Name is already taken', // Error message for already existing name
+            name: 'ValidatorError', // Error type for already existing name
+            properties: {
+                message: 'Name is already taken',
+                type: 'unique',
+                path: 'name',
+                value: 'Existing name'
+                // Other properties may vary based on the error
+            }
+        },
+        password: {
+            message: 'Password should be at least 6 characters long', // Error message for password length
+            name: 'ValidatorError', // Error type for password length
+            properties: {
+                message: 'Password should be at least 6 characters long',
+                type: 'minlength',
+                path: 'password',
+                value: 'Invalid password'
+                // Other properties may vary based on the error
+            }
+        },
+        // Additional fields and their respective validation errors (if any)
+        // ...
+    },
+    // Other properties specific to the error object
+    // ...
+};

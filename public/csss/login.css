@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Lucida Sans';
+    font-family: 'QuickSand', 'Lucida Sans';
 }
 
 
@@ -26,8 +29,8 @@ body{
     background-color: rgba(255, 255, 255);
     height: 500px;
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    /* flex-direction: column; */
+    /* gap: 20px; */
     align-items: center;
     justify-content: center;
     border-radius: 10px;
@@ -38,6 +41,14 @@ body{
    
    
     
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
 .hidden{

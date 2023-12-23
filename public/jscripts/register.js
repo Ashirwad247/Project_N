@@ -1,66 +1,54 @@
+const lform = document.querySelector('.lform');
 
-
-
-const form = document.querySelector('.form')
-
-function onloadd(){
-    if(form.classList.contains('hidden')){
+function onloadd() {
+    if (lform.classList.contains('hidden')) {
         setTimeout(() => {
-            form.classList.remove('hidden')
-            
-        },2000 );
-       
-        form.classList.add('show')
+            lform.classList.remove('hidden');
+        }, 2000);
 
+        lform.classList.add('show');
     }
-   
-
-    
 }
 
+const form = document.querySelector('form');
+let log = document.querySelector('.log');// Updated form submit event handling
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
+    const name = form.name.value;
+    const password = form.password.value;
+    log.style.display = 'flex';
 
+    try {
+        const res = await fetch('/register', {
+            method: 'POST',
+            body: JSON.stringify({ name, password }),
+            headers: { 'Content-Type': 'application/json' }
+        });
+        const data = await res.json();
+        console.log(data, 'After fetching...');
 
+        if (data.errors) {
+            let errorMessage = '';
 
-document.addEventListener("keypress", function(e){
-    if(e.key=="Enter" || e.keyCode == 13){
-        console.log('Entered')
-        register()
-    }
-})
+            if (data.errors.name) {
+                errorMessage += data.errors.name + '<br>';
+            }
 
-function register(){
-    let userName = document.querySelector('.us').value
-    let password = document.querySelector('.ps').value
-    let password1 = document.querySelector('.ps1').value
+            if (data.errors.password) {
+                errorMessage += data.errors.password;
+            }
 
-   
-
-    let log = document.querySelector('.log')
-   
-    log.style.display = 'flex'
-    
-    if(password == password1){
-        // chekPass(password)
-        let user = {
-            username:userName,
-            password:password
+            log.innerHTML = errorMessage || 'Login unsuccessful';
         }
-        localStorage.setItem(userName, JSON.stringify(user));
-        log.innerHTML = 'Registerd Succesfully'
-        myvals = localStorage.getItem(userName)
-        setTimeout(() => {
-            window.location.href ='./login'
-        }, 1000);
-        
-    }else{
-        log.innerHTML = 'password does not match'
+
+        if (data.user) {
+            log.innerHTML = 'User Creation successful. Redirecting...';
+            setTimeout(() => {
+                location.assign('/user');
+            }, 2000);
+        }
+    } catch (err) {
+        console.log(err);
     }
-}
-
-
-
-
-
-
-
+});

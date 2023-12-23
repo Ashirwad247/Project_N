@@ -11,14 +11,17 @@
 
  
     <div class="lform hidden">
-        <div class="heading">Log In</div>
-        Username
-        <input type="text" class="us"/>
-        Password
-        <input type="password" class="ps"/>
+        <form action="/login" >
+            <div class="heading"><h1>Login</h1></div>
+            <label for="">User Name</label>
+            <input type="text"  name="name"  required class="us"/>
+            <label for="">Password</label>
+            <input type="password"  name="password"  class="ps"/>
+            <input type="submit"  class="sbutton" value="submit"  />
 
-        <input type="button"  class="sbutton" value="Submit"  onclick="login()">
+        </form>
     </div>
+        
 
     <div class="log">
         

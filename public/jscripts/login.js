@@ -1,69 +1,48 @@
+const lform = document.querySelector('.lform');
 
-
-
-const form = document.querySelector('.lform')
-
-function onloadd(){
-    if(form.classList.contains('hidden')){
+function onloadd() {
+    if (lform.classList.contains('hidden')) {
         setTimeout(() => {
-            form.classList.remove('hidden')
-            
-        },2000 );
-       
-        form.classList.add('show')
-
+            lform.classList.remove('hidden');
+        }, 2000);
+        lform.classList.add('show');
     }
-   
-
-    
-}
-console.log(window.location.pathname)
-
-
-document.addEventListener("keypress", function(e){
-    if(e.key=="Enter" || e.keyCode == 13){
-        console.log('Entered')
-        login()
-    }
-})
-
-console.log('changed all')
-
-function login(){
-    let luserName = document.querySelector('.us').value
-    let lpassword = document.querySelector('.ps').value
-
-    let log = document.querySelector('.log')
-   
-    log.style.display = 'flex'
-    let userChecker = JSON.parse(localStorage.getItem(luserName))
-    if(!userChecker){
-        log.innerHTML = 'User does not exist'
-    }
-    if(userChecker.password != lpassword){
-        log.innerHTML = 'Wrong Password'
-    }
-    
-    log.innerHTML = 'Login Successful<br>Redirecting..'
-    let checkedUser = luserName
-    localStorage.setItem("currentname",checkedUser)
-    
-    setTimeout(() => {
-        window.location.href = "./user"
-    }, 2000);
-  
-    
-
-   
-    
-   
-    
 }
 
+const form = document.querySelector('form');
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    let nameError = '';
+    let passwordError = '';
+    let name = document.querySelector('.us').value;
+    let password = document.querySelector('.ps').value;
+    let log = document.querySelector('.log');
+    log.style.display = 'flex';
 
+    try {
+        const res = await fetch('/login', {
+            method: 'POST',
+            body: JSON.stringify({ name, password }),
+            headers: { 'Content-Type': 'application/json' }
+        });
+        const data = await res.json();
+    
+        // if (data.errors) {
+        //     nameError = data.errors.name || '';
+        //     passwordError = data.errors.password+'Halo Amigos' || '';
+        // }
+        // // log.innerHTML = nameError || passwordError;
+        // console.log(nameError, passwordError)
 
-
-
-
-
-
+        if (!data.user) {
+            log.innerHTML = data.errors || 'Login unsuccessful';
+        } else {
+            log.innerHTML = 'Login successful. Redirecting...';
+            setTimeout(() => {
+                window.location.href = "./user";
+            }, 2000);
+        }
+    } catch (err) {
+        console.log(err);
+    }
+});
