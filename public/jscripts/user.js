@@ -32,7 +32,7 @@ let MyOrdersDiv = document.querySelector('.ndiv')
 let myOrdersConnectedDiv = document.querySelector('.mrs')
 
 
-unameDispaly.innerHTML = uname
+// unameDispaly.innerHTML = uname
 let n=0
 let menu = document.querySelector('.dupmenu')
 menu.classList.add('hmenu')

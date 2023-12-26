@@ -2,6 +2,7 @@ const { json } = require('body-parser');
 const express = require('express');
 const path = require('path')
 const app = express();
+const cookieParser = require('cookie-parser')
 
 //routes
 const normRoutes = require('./routers/normRoutes');
@@ -12,19 +13,21 @@ let port = 5000;
 const mongoose = require('mongoose');
 
 app.use(express.static('public'));
+app.use(cookieParser())
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs')
 
 const {fetchProducts} = require('./controller/products');
 const { User } = require('./models/user');
+const { checkUser } = require('./middleware/authMware');
 
 app.use(express.json());
-
+app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 
 const uri =`mongodb+srv://amzsuper:amzsuper@cluster0.ea3wkrl.mongodb.net/amz-users?retryWrites=true&w=majority`;
 
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(uri)
   .then(() => {
     console.log('Connected to MongoDB');
     // Your code logic after successfully connecting to the database
@@ -35,7 +38,7 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   });
 
 
-
+app.get('*', checkUser)
 app.get('/', async (req, res)=>{
     // res.status(200)
    try{

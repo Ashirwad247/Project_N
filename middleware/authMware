@@ -1,0 +1,48 @@
+const jwt = require('jsonwebtoken');
+const { User } = require('../models/user');
+
+const checkUser = async (req, res, next) => {
+  const token = req.cookies.jwt;
+  if (token) {
+    try {
+      const decodedToken = jwt.verify(token, 'amz secret');
+      const user = await User.findById(decodedToken.id);
+      if (user) {
+        res.locals.user = user;
+        next();
+      } else {
+        throw new Error('User not found');
+      }
+    } catch (err) {
+      console.error(err.message);
+      res.locals.user = null;
+      next();
+    }
+  } else {
+    res.locals.user = null;
+    next();
+  }
+};
+const requireAuth = async (req, res, next) => {
+    const token = req.cookies.jwt;
+    if (token) {
+      try {
+        const decodedToken = jwt.verify(token, 'amz secret');
+        const user = await User.findById(decodedToken.id);
+        if (user) {
+          res.locals.user = user; // Set the entire user object
+          res.locals.username = user.name; // Set the username specifically
+          console.log(res.locals.username)
+          next();
+        } else {
+          throw new Error('User not found');
+        }
+      } catch (err) {
+        console.error(err.message);
+        res.redirect('/login');
+      }
+    } else {
+      res.redirect('/login');
+    }
+  };
+module.exports = { checkUser, requireAuth };
